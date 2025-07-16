@@ -1,0 +1,63 @@
+﻿<Window x:Class="ComputerNetworksCourseWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gv="clr-namespace:Microsoft.Msagl.GraphViewerGdi;assembly=Microsoft.Msagl.GraphViewerGdi"
+        xmlns:local="clr-namespace:ComputerNetworksCourseWork"
+        xmlns:network="clr-namespace:ComputerNetworksCourseWork.Networks.Controls" 
+        xmlns:graph="clr-namespace:ComputerNetworksCourseWork.Graphs.Controls"
+        xmlns:analysis="clr-namespace:ComputerNetworksCourseWork.Analyzes.Controls"
+        xmlns:traficSimulator="clr-namespace:ComputerNetworksCourseWork.TraficSimulations.Controls"
+        mc:Ignorable="d"
+        Title="Course Work" Height="960" Width="1280"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*" />
+            </Grid.ColumnDefinitions>
+
+            <network:NetworkControl Grid.Column="0"
+                                    Margin="0,0,5,0"
+                                    x:Name="NetworkControl"
+                                    Grid.Row="0"/>
+
+            <graph:GraphControl Grid.Column="1" 
+                                x:Name="GraphControl" />
+        </Grid>
+
+        <Grid Grid.Row="1"
+              VerticalAlignment="Top">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+
+            <analysis:AnalysisControl 
+                Margin="5,0,5,0"
+                Grid.Column="0"
+                x:Name="AnalysisControl" />
+
+            <traficSimulator:TraficSimulationControl 
+                    Margin="5,0,5,0"
+                    Grid.Column="1"
+                    x:Name="TraficSimulatorControl"/>
+
+        </Grid>
+
+    </Grid>
+    
+</Window>
